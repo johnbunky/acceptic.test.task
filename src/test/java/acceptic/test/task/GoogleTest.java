@@ -19,20 +19,18 @@ public class GoogleTest {
         browser = "chrome";
         holdBrowserOpen = true;
     }
+
     @Test
-    public void loginSucces() {
+    public void loginSucces(){
 
         // Arrage
         GoogleMailPage mailPage = open("https://mail.google.com", GoogleMailPage.class);
 
         // Act
-        MainMailPage userPage = mailPage.mainMailPage("treasy.uitest@gmail.com", "N3cqNkjF6RvN");
+        UserMailPage userPage = mailPage.mainMailPage("acceptic.uitest@gmail.com", "HelloWorld!");
 
         // Assert
-        userPage.inbox().should(exist);
-    }
-    @Test
-    public void unreadCounter(){
-
+        userPage.compose().should(exist);
+        System.out.print("Непрочитанных сообщений: " + userPage.getUnreadCounter());
     }
 }
