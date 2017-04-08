@@ -9,14 +9,12 @@ import static com.codeborne.selenide.Configuration.holdBrowserOpen;
 import static com.codeborne.selenide.Configuration.startMaximized;
 import static com.codeborne.selenide.Selenide.open;
 
-/**
- * Created by johnbunky on 21.02.17.
- */
+
 public class GoogleTest {
     @BeforeClass
     public static void setup(){
         startMaximized = false;
-        browser = "chrome";
+        //browser = "chrome";
         holdBrowserOpen = true;
     }
 
@@ -27,7 +25,7 @@ public class GoogleTest {
         GoogleMailPage mailPage = open("https://mail.google.com", GoogleMailPage.class);
 
         // Act
-        UserMailPage userPage = mailPage.mainMailPage("acceptic.uitest@gmail.com", "HelloWorld!");
+        UserMailPage userPage = mailPage.mainMailPage("treasy.uitest@gmail.com", "N3cqNkjF6RvN");
 
         // Assert
         userPage.compose().should(exist);
