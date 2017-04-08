@@ -14,7 +14,7 @@ public class GoogleTest {
     @BeforeClass
     public static void setup(){
         startMaximized = false;
-        browser = "chrome";
+        browser = "chrome";//Hi
         holdBrowserOpen = true;
     }
 
